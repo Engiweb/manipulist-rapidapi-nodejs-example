@@ -1,0 +1,66 @@
+{
+  "name": "manipulist-rapidapi-nodejs-example",
+  "version": "1.0.0",
+  "description": "NodeJS example for manipulist-rapidapi-query",
+  "main": "src/index.ts",
+  "homepage": "https://github.com/Engiweb/manipulist-rapidapi-nodejs-example",
+  "keywords": [
+    "manipulist",
+    "rapidapi",
+    "api query",
+    "query library",
+    "nodejs example"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Engiweb/manipulist-rapidapi-nodejs-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Engiweb/manipulist-rapidapi-nodejs-example/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Christian Carestia",
+    "email": "info@engiweb.com",
+    "url": "https://engiweb.com"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**/* --fix",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:cov": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --watchAll --notify",
+    "types:check": "tsc --noEmit",
+    "types:watch": "npm run types:check -- --watch",
+    "start": "ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "husky": "^4.2.5",
+    "jest": "^27.1.0",
+    "node-notifier": "^10.0.0",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "form-data": "^4.0.0",
+    "formdata-node": "^4.0.1",
+    "manipulist-rapidapi-query": "^1.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "post-commit": ""
+    }
+  }
+}
