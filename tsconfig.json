@@ -29,7 +29,8 @@
 
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "dist"
+    "declarationDir": "dist",
+    "useUnknownInCatchVariables": false
   },
   // "files": ["src/index.ts"],
   // "include": ["src/global.d.ts", "src/**/*.ts", "test/**/*.ts"],

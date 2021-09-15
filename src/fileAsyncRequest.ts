@@ -4,23 +4,32 @@ import {
   ManipulistResponse,
 } from 'manipulist-rapidapi-query/@types/types'
 
-const fileAsyncRequest = ({
+const fileAsyncRequest = async ({
   endpoint,
   apiKey,
   file,
   param1,
   param2,
   lb,
-}: ManipulistApi): Promise<ManipulistResponse> =>
-  callManipulistApi({
-    endpoint,
-    apiKey,
-    file,
-    param1,
-    param2,
-    lb,
-  })
-    .then((response) => response)
-    .catch((e) => ({ error: e.message }))
+}: ManipulistApi): Promise<ManipulistResponse> => {
+  try {
+    const response = await callManipulistApi({
+      endpoint,
+      apiKey,
+      file,
+      param1,
+      param2,
+      lb,
+    })
+
+    return response
+  } catch (e: any) {
+    if (e?.message) {
+      return { error: e?.message || 'Could not call api' }
+    }
+
+    return { error: 'Could not call api' }
+  }
+}
 
 export default fileAsyncRequest
